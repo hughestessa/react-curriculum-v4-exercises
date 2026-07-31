@@ -15,10 +15,12 @@ export default function BugEffectLoop() {
 
   useEffect(() => {
     setCount(count + 1);
-  });
+  }, []);
 
   return <p>Bug 1 Count: {count}</p>;
 }
 
 // Explanation:
-// (Write your explanation here)
+// Tessa Hughes: Added an empty dependency array as second argument of useAffect
+// This makes it so useEffect only runs once;
+// React watches what is in that array for changes before running again and since it is empty...
